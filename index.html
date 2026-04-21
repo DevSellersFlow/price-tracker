@@ -77,7 +77,7 @@ svg.chart { width:100%; height:260px; display:block; }
     <div class="brandrow">
       <div class="brand">SellersFlow</div>
       <div class="subtitle">Monitor · Creatina Brasil</div>
-      <div class="subtitle">Atualizado em 21/04/2026 às 12:17</div>
+      <div class="subtitle">Atualizado em 21/04/2026 às 16:39</div>
       <span id="mp-sync-indicator" style="font-size:11px;font-family:monospace;color:#7a9db8;margin-left:12px"></span>
       <div style="margin-left:auto; display:flex; gap:10px; flex-wrap:wrap;">
         <select id="globalDateFilter" class="input" style="width:170px; padding:8px 10px;"></select>
@@ -304,7 +304,7 @@ function generateAlerts() {
   // ── Divergência canal ─────────────────────────────────────
   const byBrandCanal = {};
   rows.forEach(r => {
-    const k = r.brand + '||' + r.size;
+    const k = r.brand + '||' + r.size + '||' + r.type;
     if (!byBrandCanal[k]) byBrandCanal[k] = [];
     byBrandCanal[k].push(r);
   });
@@ -1135,6 +1135,22 @@ function buildReportHTML(scopeRows, title, subtitle, reportType, myPriceSection)
     .fl{font-size:9px;font-family:monospace;color:rgba(255,255,255,.3)}.fl b{color:rgba(255,255,255,.65)}
     .fr{font-size:9px;font-family:monospace;color:rgba(255,255,255,.2)}
     @media print{body{background:#fff}.page{box-shadow:none}.stripe,.hdr,thead tr,.kpi::before,.foot{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+
+    @media screen and (max-width: 768px) {
+      .page { max-width: 100% !important; }
+      .hdr { padding: 20px 20px 18px !important; flex-direction: column; gap: 12px; }
+      .body { padding: 16px 16px 24px !important; }
+      .kpis { grid-template-columns: repeat(2, 1fr) !important; gap: 8px !important; }
+      .g2, .g3 { grid-template-columns: 1fr !important; }
+      .tbl { font-size: 11px !important; min-width: 0 !important; }
+      .tbl td, .tbl th { padding: 6px 8px !important; }
+      .foot { padding: 10px 16px !important; flex-direction: column; gap: 4px; }
+      .narr { padding: 12px 14px !important; font-size: 12px !important; }
+      .hpills { gap: 5px !important; }
+      .htitle { font-size: 20px !important; }
+      .brand-row { flex-wrap: wrap; }
+      table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    }
   `;
 
   function channelBadge(c) {
