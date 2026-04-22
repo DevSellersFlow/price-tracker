@@ -90,7 +90,7 @@ export async function processUpload(
     const pid = productIdMap.get(idx)
     if (!pid) return
     for (const h of n.history) {
-      allHistory.push({ ...h, product_id: pid })
+      allHistory.push({ ...h, product_id: pid, raw_value: h.raw_value ?? null })
     }
   })
 

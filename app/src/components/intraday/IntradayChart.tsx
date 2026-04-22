@@ -38,10 +38,10 @@ export function IntradayChart({ data }: Props) {
             borderRadius: '8px',
             fontSize: 12,
           }}
-          formatter={(val: number, name: string) => {
-            if (name === 'avg_price') return [brl(val), 'Preço médio']
-            if (name === 'reads') return [val, 'Capturas']
-            return [val, name]
+          formatter={(val, name) => {
+            if (name === 'avg_price') return [brl(val as number), 'Preço médio']
+            if (name === 'reads') return [val as number, 'Capturas']
+            return [val as number, name as string]
           }}
         />
         <Legend

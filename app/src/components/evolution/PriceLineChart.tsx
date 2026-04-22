@@ -48,7 +48,7 @@ export function PriceLineChart({ history }: Props) {
             fontSize: 12,
           }}
           labelStyle={{ color: 'var(--color-muted-foreground)', marginBottom: 4 }}
-          formatter={(val: number) => [brl(val), 'Preço']}
+          formatter={(val) => [brl(val as number), 'Preço']}
           labelFormatter={label => {
             const parts = label.split('-')
             return `${parts[2]}/${parts[1]}/${parts[0]}`
