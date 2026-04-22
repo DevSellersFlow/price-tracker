@@ -1,0 +1,85 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  /* ── Brand tokens (from original index.html palette) ── */
+  --color-brand-bg: #06111f;
+  --color-brand-panel: #0c2037;
+  --color-brand-panel2: #102844;
+  --color-brand-line: #1f4164;
+  --color-brand-blue: #2e93ff;
+  --color-brand-blue2: #69b7ff;
+  --color-brand-green: #2dcc70;
+  --color-brand-red: #ff5e66;
+
+  /* ── shadcn semantic tokens — dark (default) ── */
+  --color-background: oklch(12% 0.03 240);
+  --color-foreground: oklch(93% 0.02 220);
+  --color-card: oklch(15% 0.04 230);
+  --color-card-foreground: oklch(93% 0.02 220);
+  --color-popover: oklch(15% 0.04 230);
+  --color-popover-foreground: oklch(93% 0.02 220);
+  --color-primary: oklch(65% 0.18 235);
+  --color-primary-foreground: oklch(100% 0 0);
+  --color-secondary: oklch(20% 0.04 230);
+  --color-secondary-foreground: oklch(80% 0.05 225);
+  --color-muted: oklch(20% 0.04 230);
+  --color-muted-foreground: oklch(60% 0.05 225);
+  --color-accent: oklch(20% 0.04 230);
+  --color-accent-foreground: oklch(93% 0.02 220);
+  --color-destructive: oklch(65% 0.22 15);
+  --color-destructive-foreground: oklch(100% 0 0);
+  --color-success: oklch(65% 0.18 145);
+  --color-success-foreground: oklch(100% 0 0);
+  --color-border: oklch(22% 0.05 230);
+  --color-input: oklch(18% 0.04 230);
+  --color-ring: oklch(65% 0.18 235);
+
+  --radius: 0.75rem;
+  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+/* light mode overrides */
+.light {
+  --color-background: oklch(99% 0.002 240);
+  --color-foreground: oklch(15% 0.03 230);
+  --color-card: oklch(97% 0.004 230);
+  --color-card-foreground: oklch(15% 0.03 230);
+  --color-popover: oklch(99% 0.002 240);
+  --color-popover-foreground: oklch(15% 0.03 230);
+  --color-primary: oklch(55% 0.18 235);
+  --color-primary-foreground: oklch(100% 0 0);
+  --color-secondary: oklch(93% 0.01 230);
+  --color-secondary-foreground: oklch(25% 0.04 230);
+  --color-muted: oklch(93% 0.01 230);
+  --color-muted-foreground: oklch(50% 0.05 225);
+  --color-accent: oklch(90% 0.02 235);
+  --color-accent-foreground: oklch(25% 0.04 230);
+  --color-destructive: oklch(55% 0.22 15);
+  --color-destructive-foreground: oklch(100% 0 0);
+  --color-success: oklch(50% 0.18 145);
+  --color-success-foreground: oklch(100% 0 0);
+  --color-border: oklch(88% 0.01 230);
+  --color-input: oklch(88% 0.01 230);
+  --color-ring: oklch(55% 0.18 235);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+}
+
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: 3px; }
